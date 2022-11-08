@@ -91,12 +91,13 @@ for(let i = 0; i < posts.length; i++){
     postLikes.innerHTML = currentPost.likes;
     postDate.innerHTML = currentPost.created;
     
+    //Milestone 2
+    const likeBtn = document.getElementsByClassName("like-button")[i];
+
+    likeBtn.addEventListener("click", function(){
+    likeBtn.classList.add("like-button--liked");
+    });
+
 
 }
 
-//Milestone 2
-const likeBtn = document.getElementsByClassName("like-button")[0];
-
-likeBtn.addEventListener("click", function(){
-    likeBtn.classList.add("like-button--liked");
-});
