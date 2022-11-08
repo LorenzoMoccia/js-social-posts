@@ -60,6 +60,8 @@ const posts = [
 const node = document.getElementById("container");
 node.parentNode.removeChild(node);
 
+//Array liked post
+const likedPostArray = [];
 
 for(let i = 0; i < posts.length; i++){
     const currentPost = posts[i];
@@ -97,6 +99,8 @@ for(let i = 0; i < posts.length; i++){
 
         likeBtn.classList.add("like-button--liked");
         postLikes.innerHTML = currentPost.likes + 1;
+        likedPostArray.push(currentPost.id);
+        console.log(likedPostArray);
     });
 
 
