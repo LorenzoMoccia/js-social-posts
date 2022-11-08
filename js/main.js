@@ -58,16 +58,24 @@ const posts = [
 
 //------------ELEMENTS & VARIABLES---------//
 const node = document.getElementById("container");
-const clone = node.cloneNode(true);
+
 
 
 let number = posts.length;
+
 for(let i = 0; i < posts.length; i++){
     const currentPost = posts[i];
 
+    const clone = node.cloneNode(true);
     document.body.appendChild(clone);
-    
+
     const authorElement = document.getElementsByClassName("post-meta__author")[i];
+    const imageElement = document.getElementsByClassName("post-meta__icon")[i];
+    imageElement.classList.add("profile-pic-default");
+
+    authorElement.innerHTML = currentPost.author.name;
+    imageElement.innerHTML = `<img src="${currentPost.author.image}"></img>`
+    
 
 }
 
