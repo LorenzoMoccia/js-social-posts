@@ -59,9 +59,8 @@ const posts = [
 //------------ELEMENTS & VARIABLES---------//
 const node = document.getElementById("container");
 
+const postElement = document.getElementsByClassName("post");
 
-
-let number = posts.length;
 
 for(let i = 0; i < posts.length; i++){
     const currentPost = posts[i];
@@ -69,14 +68,35 @@ for(let i = 0; i < posts.length; i++){
     const clone = node.cloneNode(true);
     document.body.appendChild(clone);
 
+    //Autore post
     const authorElement = document.getElementsByClassName("post-meta__author")[i];
+    //Img author
     const imageElement = document.getElementsByClassName("post-meta__icon")[i];
     imageElement.classList.add("profile-pic-default");
+    //Descrizione post
+    const descriptionElement = document.getElementsByClassName("post__text")[i];
+    //Immagine post
+    const postImage = document.getElementsByClassName("post__image")[i];
+    //Likes post
+    const postLikes = document.getElementsByClassName("likes__counter")[i];
+    //Data
+    const postDate = document.getElementsByClassName("post-meta__time")[i];
 
+
+    //MODIFICO L'HTML
     authorElement.innerHTML = currentPost.author.name;
     imageElement.innerHTML = `<img src="${currentPost.author.image}"></img>`
+    descriptionElement.innerHTML = currentPost.content;
+    postImage.innerHTML = `<img src="${currentPost.media}"></img>`
+    postLikes.innerHTML = currentPost.likes;
+    postDate.innerHTML = currentPost.created;
     
 
 }
 
+//Milestone 2
+const likeBtn = document.getElementsByClassName("like-button")[0];
 
+likeBtn.addEventListener("click", function(){
+    likeBtn.classList.add("like-button--liked");
+});
