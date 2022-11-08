@@ -94,7 +94,9 @@ for(let i = 0; i < posts.length; i++){
     const likeBtn = document.getElementsByClassName("like-button")[i];
 
     likeBtn.addEventListener("click", function(){
-    likeBtn.classList.add("like-button--liked");
+
+        likeBtn.classList.add("like-button--liked");
+        postLikes.innerHTML = currentPost.likes + 1;
     });
 
 
