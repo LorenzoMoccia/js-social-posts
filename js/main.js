@@ -58,8 +58,7 @@ const posts = [
 
 //------------ELEMENTS & VARIABLES---------//
 const node = document.getElementById("container");
-
-const postElement = document.getElementsByClassName("post");
+node.parentNode.removeChild(node);
 
 
 for(let i = 0; i < posts.length; i++){
@@ -99,5 +98,6 @@ for(let i = 0; i < posts.length; i++){
     });
 
 
+    
 }
 
