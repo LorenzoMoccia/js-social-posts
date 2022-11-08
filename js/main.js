@@ -90,7 +90,7 @@ for(let i = 0; i < posts.length; i++){
     descriptionElement.innerHTML = currentPost.content;
     postImage.innerHTML = `<img src="${currentPost.media}"></img>`
     postLikes.innerHTML = currentPost.likes;
-    postDate.innerHTML = currentPost.created;
+    postDate.innerHTML = formatDate(currentPost.created);
     
     //Milestone 2
     const likeBtn = document.getElementsByClassName("like-button")[i];
@@ -99,8 +99,8 @@ for(let i = 0; i < posts.length; i++){
 
         likeBtn.classList.add("like-button--liked");
         postLikes.innerHTML = currentPost.likes + 1;
-        likedPostArray.push(currentPost.id);
         console.log(likedPostArray);
+        likedPostArray.push(currentPost.id);
     });
 
 
@@ -109,15 +109,13 @@ for(let i = 0; i < posts.length; i++){
 
 
 
+function formatDate (input) {
+    var datePart = input.match(/\d+/g),
+    year = datePart[0].substring(2), // get only two digits
+    month = datePart[1], day = datePart[2];
+  
+    return day+'/'+month+'/'+year;
+  }
+  
 
-function reverseString(str) {
-
-    var newString = "";
- 
-
-    for (var i = str.length - 1; i >= 0; i--) { 
-        newString += str[i]; 
-    }
-    
-    return newString; 
-}
+  
