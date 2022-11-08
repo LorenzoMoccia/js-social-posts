@@ -55,3 +55,20 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+//------------ELEMENTS & VARIABLES---------//
+const node = document.getElementById("container");
+const clone = node.cloneNode(true);
+
+
+let number = posts.length;
+for(let i = 0; i < posts.length; i++){
+    const currentPost = posts[i];
+
+    document.body.appendChild(clone);
+    
+    const authorElement = document.getElementsByClassName("post-meta__author")[i];
+
+}
+
+
